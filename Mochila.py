@@ -12,9 +12,10 @@ class Mochila:
 
     def __str__(self):
         objetosAlmacenados_str = ''
-        for numero, objeto in enumerate(self._objetosAlmacenados, 1):
+        pesoActual = "{:.2f}".format(self.comprobarPeso())
+        for numero, objeto in enumerate(self._objetosAlmacenados, 0):
             objetosAlmacenados_str += f'{numero}. {objeto}\n'
-        return (f'{self._nombre} - Capacidad: {self.comprobarPeso()}/{self._capacidad}\n'
+        return (f'{self._nombre} - Capacidad: {pesoActual}/{self._capacidad}\n'
                 f'{objetosAlmacenados_str}\n')
 
     def meterObjeto(self, objetosAlmacenados):
@@ -25,7 +26,7 @@ class Mochila:
             print('Excediste la capacidad de la mochila.')
 
     def quitarObjeto(self, idObjeto):
-        if 0 < idObjeto < len(self._objetosAlmacenados):
+        if -1 < idObjeto < len(self._objetosAlmacenados):
             self._objetosAlmacenados.pop(idObjeto)
         else:
             print('Id de objeto no valida')
