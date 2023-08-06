@@ -2,7 +2,13 @@ class Mochila:
     def __init__(self, nombre, capacidad, objetosAlmacenados):
         self._nombre = nombre
         self._capacidad = capacidad
-        self._objetosAlmacenados = list(objetosAlmacenados)
+        self._objetosAlmacenados = []
+
+        peso_total = sum(objeto.peso for objeto in objetosAlmacenados)
+        if peso_total <= capacidad:
+            self._objetosAlmacenados = objetosAlmacenados
+        else:
+            print('Excediste la capacidad de la mochila')
 
     def __str__(self):
         objetosAlmacenados_str = ''
@@ -16,8 +22,7 @@ class Mochila:
         if pesoTotal < self._capacidad:
             self._objetosAlmacenados.append(objetosAlmacenados)
         else:
-            print(f'Excediste el peso de la mochila.\n'
-                  f'(Objeto a agregar: {objetosAlmacenados.__str__()})')
+            print('Excediste la capacidad de la mochila.')
 
     def quitarObjeto(self, idObjeto):
         if 0 < idObjeto < len(self._objetosAlmacenados):
@@ -52,7 +57,6 @@ class Mochila:
     @objetosAlmacenados.setter
     def objetosAlmacenados(self, objetosAlmacenados):
         self._objetosAlmacenados = objetosAlmacenados
-
 
 class MochilaPequena(Mochila):
     def __init__(self, nombre, objetosAlmacenados):
