@@ -4,9 +4,11 @@
 
 El Sistema de Inventario de Mochilas basado en pesos es una aplicación Python que permite gestionar objetos físicos que pueden ser almacenados en diferentes tipos de mochilas. Los objetos tienen un atributo de peso en kilogramos, y las mochilas tienen una capacidad máxima también expresada en kilogramos. El sistema garantiza que los objetos almacenados en una mochila no excedan su límite de peso.
 
+![ImagenPresentacionMochila](https://cdn.discordapp.com/attachments/1116592460009852971/1137961670086504488/image.png "ImagenPresentacionMochila")
+
 ## Clases
 
-## - `ObjetoFisico`
+## - ObjetoFisico
 
 Esta clase representa los objetos físicos que se pueden almacenar en las mochilas. Cada objeto tiene un nombre y un peso en kilogramos. Los objetos se crean como instancias de esta clase con la siguiente sintaxis:
 
@@ -18,6 +20,7 @@ objeto = ObjetoFisico(nombre='Nombre del Objeto', peso=peso_en_kg)
 - nombre: El nombre del objeto.
 - peso: El peso del objeto en kilogramos.
 - _idObjeto: Un identificador único generado automáticamente para cada objeto creado.
+<br>
 
 ### Métodos:
 - __str__(): Devuelve una representación en forma de cadena del objeto con el formato "nombre (peso kg)".
@@ -31,9 +34,15 @@ manzana = ObjetoFisico(nombre='Manzana', peso=0.02)
 # Mostrar el objeto físico en la consola.
 print(manzana)
 ```
+<br>
+------------
+## - Mochila
+Esta clase representa las mochilas en las que se almacenarán los objetos físicos. Cada mochila tiene un nombre, una capacidad máxima (expresada en kilogramos) y una lista de objetos almacenados en ella. Las mochilas se crean como instancias de las sub-clases con la siguiente sintaxis:
 
-## - `Mochila`
-Esta clase representa las mochilas en las que se almacenarán los objetos físicos. Cada mochila tiene un nombre, una capacidad máxima (expresada en kilogramos) y una lista de objetos almacenados en ella. Las mochilas se crean como instancias de esta clase con la siguiente sintaxis:
+#### Sub-clases
+- MochilaPequena **(Capacidad: 1.5kg)**
+- MochilaMediana **(Capacidad: 3.5kg)**
+- MochilaGrande **(Capacidad: 7.3kg)**
 
 ```python
 mochila = Mochila(nombre='Nombre de la Mochila', capacidad=capacidad_en_kg, objetosAlmacenados=lista_de_objetos)
