@@ -35,7 +35,7 @@ manzana = ObjetoFisico(nombre='Manzana', peso=0.02)
 print(manzana)
 ```
 <br>
-------------
+
 ## - Mochila
 Esta clase representa las mochilas en las que se almacenarán los objetos físicos. Cada mochila tiene un nombre, una capacidad máxima (expresada en kilogramos) y una lista de objetos almacenados en ella. Las mochilas se crean como instancias de las sub-clases con la siguiente sintaxis:
 
