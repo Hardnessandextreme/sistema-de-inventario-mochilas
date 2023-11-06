@@ -8,11 +8,15 @@ objeto4 = ObjetoFisico(nombre='Pistola 9mm', peso=1.3)
 
 aMochila1 = [objeto1, objeto2, objeto3]
 
-mochila1 = MochilaPequena(nombre='Mochila de camisa', objetosAlmacenados=aMochila1)
+mochila1 = MochilaGrande(nombre='Mochila de camisa', objetosAlmacenados=aMochila1)
 
 
 # mochila1.meterObjeto(objeto2)
 mochila1.quitarObjeto(0)
 
 
+print(mochila1)
+mochila1.meterObjeto(objeto4)
+print(mochila1)
+mochila1.quitarObjeto(0)
 print(mochila1)
